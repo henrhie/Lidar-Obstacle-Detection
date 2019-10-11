@@ -28,8 +28,8 @@ $> sudo apt install libpcl-dev
 $> cd ~
 $> git clone https://github.com/henrhie/Lidar-Obstacle-Detection.git
 $> cd Lidar-Obstacle-Detection
-$> mkdir build && cd build
-$> cmake ..
+$> mkdir build && cd build  **if build folder is not available
+$> cmake ..  **can skip this step. project already built
 $> make
 $> ./environment
 ```
