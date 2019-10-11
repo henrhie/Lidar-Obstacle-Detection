@@ -2,7 +2,20 @@
 
 <img src="media/ObstacleDetectionFPS.gif" width="700" height="400" />
 
-This project was built as part of the Udacity Sensor Fusion Nanodegree Program
+This project was built as part of the **Udacity Sensor Fusion Nanodegree Program**.
+
+The main objective of this project is to preprocess, cluster and draw bounding boxes around obstacles in a sequence of lidar point cloud data using custom c++ algorithms and PCL(Point Cloud Library) implemented algorithms.
+
+**Workflow
+
+**Filtering and Cropping**
+This is the initial stage of the lidar preprocessing pipeline. Most of the task here involves downsampling point cloud data to reduce the number of points for fast processing. We use PCL implementation of voxel grid filtering to downsample the cloud data. Another important point of this stage is to remove cloud points which are beyond the sides of the road.
+
+**Segmentation**
+At this stage, we use our custom C++ implementation of the Random Sample Consensus (RANSAC) algorithm to separate the ground plane from the obstacle plane. More details: https://en.wikipedia.org/wiki/Random_sample_consensus
+
+**Clustering**
+At this stage also, we use our custom C++ implementation of the Kd-tree data structure to efficiently extract clusters from the obstacle plane. We then draw bounding boxes around each cluster which represents an obstacle within our ego vehichle environment.
 
 
 
